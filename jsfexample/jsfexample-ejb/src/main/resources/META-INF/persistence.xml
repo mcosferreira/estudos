@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+   xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+        http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="ProjetoEvento-ejbPU">
+        <!-- provider: hibernate -->
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>	           
+
+        <!-- If you are running in a production environment, add a managed 
+            data source, the example data source is just for proofs of concept! -->
+        <jta-data-source>java:jboss/datasources/ProjetoEventoDS</jta-data-source>
+
+        <!-- entities --> 
+        <class>br.senac.rj.posjee.persistence.entity.Endereco</class>
+        <class>br.senac.rj.posjee.persistence.entity.Patrocinador</class>
+        <class>br.senac.rj.posjee.persistence.entity.Evento</class>
+        <class>br.senac.rj.posjee.persistence.entity.Inscrito</class>
+        <class>br.senac.rj.posjee.persistence.entity.EventoInscrito</class>
+        <class>br.senac.rj.posjee.persistence.entity.TipoLocal</class>
+        <class>br.senac.rj.posjee.persistence.entity.Local</class>
+        <class>br.senac.rj.posjee.persistence.entity.MotivoEvento</class>
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <!-- Properties for Hibernate -->
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" /> <!-- value="update" />-->
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+        </properties>
+                   
+    </persistence-unit>
+</persistence>
