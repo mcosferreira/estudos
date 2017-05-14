@@ -22,11 +22,13 @@
          <artifactId>jsfexample-web</artifactId>
          <type>war</type>
       </dependency>
+      <!-- 
       <dependency>
          <groupId>br.msf.estudo</groupId>
          <artifactId>jsfexample-ejb</artifactId>
          <type>ejb</type>
       </dependency>
+       -->
    </dependencies>
 
    <build>
