@@ -1,0 +1,39 @@
+body{
+    font-family: "Century Gothic";
+    font-size: 12px;
+}
+
+h1{
+    color: #999999;
+    font-size: 36px;
+    text-align: center;
+}
+
+#wrapper{
+    width: 80vw;
+    margin-left: 10vw;
+    border: 1px solid #006633;    
+}
+
+#content{
+    min-height: 50vh;  
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+footer{    
+    height: 90px;
+    background: rgb(43,43,43);
+    border-top: 6px solid #006633;
+    color: #FFFFFF;    
+    text-align: center;
+}
+
+.errorMsg{
+    color: #990000;
+}
+
+.errorOnInput{
+    background: #990000;
+    color: white;
+}

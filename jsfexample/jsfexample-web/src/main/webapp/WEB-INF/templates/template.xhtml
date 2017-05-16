@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	 xmlns:f="http://java.sun.com/jsf/core"
+	 xmlns:h="http://java.sun.com/jsf/html"
+	 xmlns:ui="http://java.sun.com/jsf/facelets">
+	 
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>
+			<ui:insert name="title">
+				#{msg['app.title']}
+			</ui:insert>			
+		</title>
+		<h:outputStylesheet name="mainTStyle.css" library="css"/>
+		
+		<ui:insert name="css"></ui:insert>
+		<ui:insert name="js"></ui:insert>
+	</h:head>
+
+	<h:body>
+	
+		<div id="wrapper">
+		
+			<header>
+				<ui:insert name="header">
+					<h1>#{msg['header']}</h1>
+				</ui:insert>
+			</header>
+			
+			<div id="content">
+				<ui:insert name="content">
+					<h1>#{msg['content.sorry']}</h1>
+				</ui:insert>
+			</div>
+			
+			
+			<footer>
+				<ui:insert name="footer">
+					<h1>#{msg['footer']}</h1>
+				</ui:insert>
+			</footer>
+		
+		</div>
+	
+	</h:body>
+</html>	

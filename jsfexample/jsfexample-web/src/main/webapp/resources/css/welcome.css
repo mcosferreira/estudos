@@ -1,0 +1,13 @@
+h4{
+    text-align: left;
+    color: #999999;
+}
+
+.error{
+    color: #ff0000;
+}
+
+#age-submit{
+    background: #6666ff;
+    color: white;
+}

@@ -1,0 +1,39 @@
+body{
+    font-family: "Century Gothic";
+    font-size: 12px;
+}
+
+h1{
+    color: #999999;
+    font-size: 36px;
+    text-align: center;
+}
+
+#login-form{
+    width: 60%;
+    margin-left: 20%;
+    background:  #9999ff;
+    border-radius: 3px;
+    padding: 10px 5px 10px 5px;    
+}
+
+#btn{
+    width: 220px;    
+    height: 30px;
+    background: white;
+    border: 1px solid #999999;
+    color: #6666ff;
+}
+
+#combtn{
+    border: none;
+	background: #009966;
+    color: #FFFFFF;
+    width: 220x;    
+    height: 25px;
+}
+
+
+input{
+    height: 23px;
+}
