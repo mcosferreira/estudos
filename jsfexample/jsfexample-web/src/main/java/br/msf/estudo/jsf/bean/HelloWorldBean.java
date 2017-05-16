@@ -19,7 +19,7 @@ public class HelloWorldBean implements Serializable {
 	}
 	
 	public String hello() {
-		return nome;
+		return this.nome;
 	}
 
 	public String currentTime() {
@@ -27,7 +27,7 @@ public class HelloWorldBean implements Serializable {
 	}
 	
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
