@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	 xmlns:f="http://java.sun.com/jsf/core"
+	 xmlns:h="http://java.sun.com/jsf/html"
+	 xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<ui:composition template="/WEB-INF/templates/template.xhtml">
+	
+		<ui:define name="css">
+			<h:outputStylesheet library="css" name="mainStyle.css"></h:outputStylesheet>
+		</ui:define>
+	
+		<ui:define name="content">
+
+			<h1>Using external resources</h1>
+			
+			<h:form id="login-form" prependId="false">
+	
+				<h:panelGrid columns="5">
+	
+					<h:outputLabel value="Username" for="username"/>
+					<h:inputText id="username" value="#{loginBean.username}" />
+	
+					<h:outputLabel value="Password" for="pwd"/>
+					<h:inputText id="pwd" value="#{loginBean.password}"/>
+					
+					<h:commandButton value="Login" id="combtn"/>
+	
+				</h:panelGrid>
+			</h:form>
+		
+		</ui:define>
+	
+	</ui:composition> 	
+	
+</html>
