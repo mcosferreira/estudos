@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<livro>
+    <codigo>Arq</codigo>
+    <nomeAutor>Joao da Silva</nomeAutor>
+    <titulo>Arquitetura Java</titulo>
+    <valor>29.90</valor>
+</livro>
