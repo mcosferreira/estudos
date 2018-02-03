@@ -16,6 +16,7 @@
 	<name>jsfexample Web module</name>
 
 	<dependencies>
+		<!-- 
 		<dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
@@ -27,6 +28,15 @@
             <artifactId>jsf-impl</artifactId>
             <version>2.2.8</version>
         </dependency>
+        -->
+        
+
+		<dependency>
+		    <groupId>javax.faces</groupId>
+		    <artifactId>jsf-api</artifactId>
+		    <version>2.1</version>
+		    <scope>provided</scope>
+		</dependency>
         
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -45,13 +55,14 @@
             <artifactId>jsp-api</artifactId>
             <version>2.2.1-b03</version>
         </dependency>
-        
-        <dependency>
-            <groupId>org.jboss.weld.servlet</groupId>
-            <artifactId>weld-servlet</artifactId>
-            <version>2.3.4.Final</version>
-        </dependency>
 
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
