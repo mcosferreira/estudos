@@ -20,12 +20,12 @@
 				<h:panelGrid columns="5">
 	
 					<h:outputLabel value="Username" for="username"/>
-					<h:inputText id="username" value="#{loginBean.user.username}" />
+					<h:inputText id="username" value="#{loginBeanCDI.user.username}" />
 	
 					<h:outputLabel value="Password" for="pwd"/>
-					<h:inputText id="pwd" value="#{loginBean.user.password}"/>
+					<h:inputText id="pwd" value="#{loginBeanCDI.user.password}"/>
 					
-					<h:commandButton value="Login" id="combtn" action="#{loginBean.goToWelcome}"/>
+					<h:commandButton value="Login" id="combtn" action="#{loginBeanCDI.goToWelcome}"/>
 	
 				</h:panelGrid>
 			</h:form>

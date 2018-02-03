@@ -3,29 +3,31 @@ package br.msf.estudo.jsf.bean;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 import br.msf.estudo.jsf.entity.User;
 
-@ManagedBean(name="loginBean")
+@Named(value = "loginBeanCDI")
 @SessionScoped
-public class LoginBean implements Serializable {
+public class LoginBeanCDI implements Serializable {
+
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1364645377390148478L;
+	private static final long serialVersionUID = -1942668082934939519L;
 	private User user;
 	
-	public LoginBean() {
-	}
-
 	@PostConstruct
-	public void init(){
+	public void init() {
 		user = new User();
 	}
-
+	
+	public LoginBeanCDI() {
+		
+	}
+	
 	public User getUser() {
 		return user;
 	}
@@ -34,7 +36,9 @@ public class LoginBean implements Serializable {
 		this.user = user;
 	}
 
+
 	public String goToWelcome() {
-		return "/pages/welcome?faces-redirect=true";
+		return "/pages/welcomeCDI?faces-redirect=true";
 	}
+	
 }
