@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.msf.estudo.jsf.entity.User;
@@ -12,11 +13,11 @@ import br.msf.estudo.jsf.entity.User;
 @SessionScoped
 public class LoginBeanCDI implements Serializable {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1942668082934939519L;
+	
+	@Inject
+	private LoginBean lb;
+	
 	private User user;
 	
 	@PostConstruct
@@ -36,9 +37,20 @@ public class LoginBeanCDI implements Serializable {
 		this.user = user;
 	}
 
+	public LoginBean getLb() {
+		return lb;
+	}
 
-	public String goToWelcome() {
-		return "/pages/welcomeCDI?faces-redirect=true";
+	public void setLb(LoginBean lb) {
+		this.lb = lb;
+	}
+	
+	public boolean validUser() {
+		return true;
+	}
+	
+	public String login() {
+		return (validUser()) ? "success" : "fail";
 	}
 	
 }

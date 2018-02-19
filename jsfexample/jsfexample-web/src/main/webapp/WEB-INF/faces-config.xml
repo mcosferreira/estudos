@@ -10,4 +10,20 @@
 			<var>msg</var>
 		</resource-bundle>
 	</application>
+	
+	<navigation-rule>
+	   <from-view-id>/index.xhtml</from-view-id>
+	   <navigation-case>
+	       <from-action>#{loginBeanCDI.login()}</from-action>
+	       <from-outcome>success</from-outcome>
+	       <to-view-id>/pages/welcome</to-view-id>
+	       <redirect />
+	   </navigation-case>
+	   <navigation-case>
+	       <from-action>#{loginBeanCDI.login()}</from-action>
+	       <from-outcome>fail</from-outcome>
+	       <to-view-id>/pages/fail</to-view-id>
+	       <redirect />
+	   </navigation-case>
+	</navigation-rule>
 </faces-config>

@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14952462476840" configfile="/jsfexample-web/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14952462476840" configfile="/jsfexample-web/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.html" id="pf15183124949500" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15183134594655 pf15183134594656" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/welcome" id="pf15183134594657" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15183134594655" path="/pages/welcome"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/fail" id="pf15183134594658" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15183134594656" path="/pages/fail"/>
+  <links id="pf15183134594655" target="pf15183134594657" source="pf15183124949500" outcome="success" redirect="true" fromaction="#{loginBeanCDI.login()}"/>
+  <links id="pf15183134594656" target="pf15183134594658" source="pf15183124949500" outcome="fail" redirect="true" fromaction="#{loginBeanCDI.login()}"/>
+</pageflow:Pageflow>

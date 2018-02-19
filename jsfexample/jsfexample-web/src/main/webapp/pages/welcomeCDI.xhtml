@@ -6,13 +6,10 @@
 	 xmlns:ui="http://java.sun.com/jsf/facelets">
 	
 	<ui:composition template="/WEB-INF/templates/template.xhtml">
-	
-	   <ui:define name="css">
-	       <h:outputStylesheet library="css" name="mainStyle"/>
-	   </ui:define>
 	   
 	   <ui:define name="content">
-	        Hello, #{loginBeanCDI.user.username}! Welcome back!!
+	        Hello, #{loginBeanCDI.user.username} 
+	        Welcome back!!
        </ui:define>
        
 	</ui:composition>

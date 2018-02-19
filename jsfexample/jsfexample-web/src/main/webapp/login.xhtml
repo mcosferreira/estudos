@@ -8,7 +8,7 @@
 	<ui:composition template="/WEB-INF/templates/template.xhtml">
 	
 		<ui:define name="css">
-			<h:outputStylesheet library="css" name="mainStyle.css"></h:outputStylesheet>
+			<h:outputStylesheet library="css" name="mainStyle.css" />
 		</ui:define>
 	
 		<ui:define name="content">
@@ -23,12 +23,16 @@
 					<h:inputText id="username" value="#{loginBean.user.username}" />
 	
 					<h:outputLabel value="Password" for="pwd"/>
-					<h:inputText id="pwd" value="#{loginBean.user.password}"/>
+					<h:inputSecret id="pwd" value="#{loginBean.user.password}"/>
 					
 					<h:commandButton value="Login" id="combtn" action="#{loginBean.goToWelcome}"/>
 	
 				</h:panelGrid>
 			</h:form>
+		
+            <br/>
+            
+            <h:outputText value="Username: #{loginBean.user.username}" rendered="#{loginBean.user.username ne null}" />
 		
 		</ui:define>
 	

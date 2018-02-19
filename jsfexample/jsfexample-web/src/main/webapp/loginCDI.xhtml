@@ -23,12 +23,16 @@
 					<h:inputText id="username" value="#{loginBeanCDI.user.username}" />
 	
 					<h:outputLabel value="Password" for="pwd"/>
-					<h:inputText id="pwd" value="#{loginBeanCDI.user.password}"/>
+					<h:inputSecret id="pwd" value="#{loginBeanCDI.user.password}"/>
 					
-					<h:commandButton value="Login" id="combtn" action="#{loginBeanCDI.goToWelcome}"/>
+					<h:commandButton value="Login" id="combtn" action="#{loginBeanCDI.login()}"/>
 	
 				</h:panelGrid>
 			</h:form>
+			
+			<br/>
+			
+			<h:outputText value="Username: #{loginBeanCDI.user.username}" rendered="true"/>
 		
 		</ui:define>
 	
