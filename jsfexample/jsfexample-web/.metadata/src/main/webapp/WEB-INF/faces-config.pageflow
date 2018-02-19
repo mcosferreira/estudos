@@ -3,6 +3,13 @@
   <nodes xsi:type="pageflow:PFPage" name="index.html" id="pf15183124949500" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15183134594655 pf15183134594656" path="/index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/welcome" id="pf15183134594657" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15183134594655" path="/pages/welcome"/>
   <nodes xsi:type="pageflow:PFPage" name="pages/fail" id="pf15183134594658" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15183134594656" path="/pages/fail"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/welcome.xhtml" id="pf15190459923130" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15190459923131 pf15190467243566 pf15190483665398" path="/pages/welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/age/kid" id="pf15190459923134" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf15190459923131" path="/pages/age/kid"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/age/old" id="pf15190467243567" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf15190467243566" path="/pages/age/old"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/age/teen" id="pf15190483665399" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf15190483665398" path="/pages/age/teen"/>
   <links id="pf15183134594655" target="pf15183134594657" source="pf15183124949500" outcome="success" redirect="true" fromaction="#{loginBeanCDI.login()}"/>
   <links id="pf15183134594656" target="pf15183134594658" source="pf15183124949500" outcome="fail" redirect="true" fromaction="#{loginBeanCDI.login()}"/>
+  <links id="pf15190459923131" target="pf15190459923134" source="pf15190459923130" outcome="go" redirect="true"/>
+  <links id="pf15190467243566" target="pf15190467243567" source="pf15190459923130" outcome="go" redirect="true"/>
+  <links id="pf15190483665398" target="pf15190483665399" source="pf15190459923130" outcome="go" redirect="true"/>
 </pageflow:Pageflow>

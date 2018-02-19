@@ -8,18 +8,10 @@
     <ui:composition template="/WEB-INF/templates/template.xhtml">	
 	
 	   <ui:define name="header">
-	       <h1>Age Classification</h1>
+	       <h1>You are a Kid</h1>
 	   </ui:define>
-	
+	   
 	   <ui:define name="content">
-	       <h:form prependId="false" id="age-form">
-		       Age:
-		       <h:inputText value="#{classifBean.age}" required="true">
-		           <f:convertNumber integerOnly="true" maxIntegerDigits="2" minIntegerDigits="1" />
-		       </h:inputText>
-		       
-		       <h:commandButton action="go" value="Submit" />
-	       </h:form>
 	   </ui:define>
 	
 	</ui:composition>

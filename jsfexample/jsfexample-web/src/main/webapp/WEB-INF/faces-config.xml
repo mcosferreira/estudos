@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+<faces-config version="2.2" 
+    xmlns="http://xmlns.jcp.org/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xlmns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 	
     <!-- Parametros da Aplicacao -->
 	<application>
@@ -26,4 +27,27 @@
 	       <redirect />
 	   </navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+	   <from-view-id>/pages/welcome.xhtml</from-view-id>
+	   <navigation-case>
+           <from-outcome>go</from-outcome>
+	       <if>#{classifBean.age le 11}</if>
+	       <to-view-id>/pages/age/kid</to-view-id>
+	       <redirect />
+	   </navigation-case>
+       <navigation-case>
+           <from-outcome>go</from-outcome>
+           <if>#{classifBean.age gt 11 and classifBean lt 40}</if>
+           <to-view-id>/pages/age/teen</to-view-id>
+           <redirect />
+       </navigation-case>
+       <navigation-case>
+           <from-outcome>go</from-outcome>
+           <if>#{classifBean.age ge 40}</if>
+           <to-view-id>/pages/age/old</to-view-id>
+           <redirect />
+       </navigation-case>	
+	</navigation-rule>
+	
 </faces-config>
