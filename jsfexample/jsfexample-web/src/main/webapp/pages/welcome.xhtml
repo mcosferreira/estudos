@@ -14,11 +14,13 @@
 	   <ui:define name="content">
 	       <h:form prependId="false" id="age-form">
 		       Age:
-		       <h:inputText value="#{classifBean.age}" required="true">
-		           <f:convertNumber integerOnly="true" maxIntegerDigits="2" minIntegerDigits="1" />
+		       <h:inputText value="#{classifBean.age}" required="false" id="age">
+		           <f:convertNumber integerOnly="true" maxIntegerDigits="2" minIntegerDigits="1"  />
+		           <f:validateLongRange minimum="1" />
 		       </h:inputText>
 		       
 		       <h:commandButton action="go" value="Submit" />
+		       <h:message for="age"/>
 	       </h:form>
 	   </ui:define>
 	
