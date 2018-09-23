@@ -21,6 +21,10 @@
 	
 					<h:outputLabel value="Username" for="username"/>
 					<h:inputText id="username" value="#{loginBean.user.username}" />
+					
+					<h:inputText id="dataAcesso" value="#{loginBean.dataAcesso">
+					   <f:convertDateTime patter="yyyy-M-d" />
+					</h:inputText>
 	
 					<h:outputLabel value="Password" for="pwd"/>
 					<h:inputSecret id="pwd" value="#{loginBean.user.password}"/>

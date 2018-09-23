@@ -55,6 +55,7 @@
        
 	</navigation-rule>
 	
+	<!-- Factory to uses the Custom JsfException Handler -->	
 	<factory>
 	   <exception-handler-factory>
 	       br.msf.estudo.jsf.exception.JsfAppExceptionHandlerFactory

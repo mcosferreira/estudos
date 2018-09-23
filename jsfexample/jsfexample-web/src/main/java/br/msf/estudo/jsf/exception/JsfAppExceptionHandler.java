@@ -10,12 +10,15 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ExceptionQueuedEvent;
 import javax.faces.event.ExceptionQueuedEventContext;
 
+/*
+ * A Custom Exception Handler 
+ */
 public class JsfAppExceptionHandler extends ExceptionHandlerWrapper {
 
 	private ExceptionHandler wrapped;
 	
-	public JsfAppExceptionHandler(ExceptionHandler w) {
-		this.wrapped = w;
+	public JsfAppExceptionHandler(ExceptionHandler wrapped) {
+		this.wrapped = wrapped;
 	}
 	
 	@Override
@@ -23,6 +26,9 @@ public class JsfAppExceptionHandler extends ExceptionHandlerWrapper {
 		return wrapped;
 	}
 	
+	/*
+	 * Handle all of the exceptions
+	 */
 	@Override
 	public void handle() throws FacesException {
 		Iterator<ExceptionQueuedEvent> i = getUnhandledExceptionQueuedEvents().iterator();
@@ -30,18 +36,23 @@ public class JsfAppExceptionHandler extends ExceptionHandlerWrapper {
 		while (i.hasNext()) {
 			
 			ExceptionQueuedEvent event = i.next();
+			
 			ExceptionQueuedEventContext context = (ExceptionQueuedEventContext) event.getSource();
 			
 			Throwable throwable = context.getException();
 			
 			try {
 				FacesContext facesContext = FacesContext.getCurrentInstance();
+				
 				NavigationHandler navHandler = facesContext.getApplication().getNavigationHandler();
+				
 				navHandler.handleNavigation(facesContext, null, "/pages/errors/error?faces-redirect=true");
+				
 				facesContext.renderResponse();
 				
 			} finally {
 				i.remove();
+			
 			}
 			
 			getWrapped().handle();

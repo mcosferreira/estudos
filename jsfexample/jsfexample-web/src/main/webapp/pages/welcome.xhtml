@@ -14,7 +14,7 @@
 	   <ui:define name="content">
 	       <h:form prependId="false" id="age-form">
 		       Age:
-		       <h:inputText value="#{classifBean.age}" required="false" id="age">
+		       <h:inputText value="#{classifBean.age}" required="true" id="age">
 		           <f:convertNumber integerOnly="true" maxIntegerDigits="2" minIntegerDigits="1"  />
 		           <f:validateLongRange minimum="1" />
 		       </h:inputText>
