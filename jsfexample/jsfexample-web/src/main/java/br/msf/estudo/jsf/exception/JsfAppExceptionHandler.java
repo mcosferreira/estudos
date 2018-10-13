@@ -17,8 +17,8 @@ public class JsfAppExceptionHandler extends ExceptionHandlerWrapper {
 
 	private ExceptionHandler wrapped;
 	
-	public JsfAppExceptionHandler(ExceptionHandler wrapped) {
-		this.wrapped = wrapped;
+	public JsfAppExceptionHandler(ExceptionHandler w) {
+		this.wrapped = w;
 	}
 	
 	@Override
@@ -46,7 +46,7 @@ public class JsfAppExceptionHandler extends ExceptionHandlerWrapper {
 				
 				NavigationHandler navHandler = facesContext.getApplication().getNavigationHandler();
 				
-				navHandler.handleNavigation(facesContext, null, "/pages/errors/error?faces-redirect=true");
+				navHandler.handleNavigation(facesContext, null, "pages/errors/error.jsf?faces-redirect=true");
 				
 				facesContext.renderResponse();
 				

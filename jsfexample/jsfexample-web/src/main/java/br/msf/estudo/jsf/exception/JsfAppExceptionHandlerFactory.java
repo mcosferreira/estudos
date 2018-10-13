@@ -5,6 +5,7 @@ import javax.faces.context.ExceptionHandlerFactory;
 
 /*
  * Factory needed to uses the Custom JsfException Handler
+ * Declares it in faces-config.xml at <factory><exception-handler-factory>
  */
 public class JsfAppExceptionHandlerFactory extends ExceptionHandlerFactory {
 

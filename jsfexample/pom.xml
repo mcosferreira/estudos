@@ -51,7 +51,7 @@
     <distributionManagement>
         <repository>
             <id>jboss-eap-6.1.0.GA-maven-repository</id>
-            <url>http://10.0.0.19:8081/nexus/content/groups</url><!--repositories/jboss-eap-6.1.0.GA-maven-repository</url>-->
+            <url>http://10.0.0.2:8081/nexus/content/groups</url><!--repositories/jboss-eap-6.1.0.GA-maven-repository</url>-->
         </repository>
     </distributionManagement>    
 
