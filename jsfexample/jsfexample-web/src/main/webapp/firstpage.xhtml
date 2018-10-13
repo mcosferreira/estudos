@@ -5,22 +5,25 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>
-	<title>Primeira Página JSF</title>
-</h:head>
-
-<h:body>
-	<h:form>
-		<h:panelGrid column="3">
-			<h:outputLabel value="Username" for="username"/>
-			<h:inputText value="${mainBean.username}" id="username" required="true"
-				requiredMessage="${msg['msg.username.validation']}"/>
-			<h:message for="username" />
-
-			<f:facet name="footer">
-				<h:commandButton value="submit" action="/pages/home?faces-redirect=true"/>
-			</f:facet>
-		</h:panelGrid>
-	</h:form>
-</h:body>
+	<h:head>
+		<title>Primeira Página JSF</title>
+	</h:head>
+	
+	<h:body>
+		<h:form>
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Username" for="username"/>
+				
+				<h:inputText value="${mainBean.username}" id="username" required="true"
+					         requiredMessage="${msg['msg.username.validation']}"/>
+				
+				<h:message for="username" />
+	
+				<f:facet name="footer">
+					<h:commandButton value="submit" action="/pages/home?faces-redirect=true"/>
+				</f:facet>
+			
+			</h:panelGrid>
+		</h:form>
+	</h:body>
 </html>
