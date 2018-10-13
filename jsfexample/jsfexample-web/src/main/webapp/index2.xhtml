@@ -8,7 +8,7 @@
 	<ui:composition template="/WEB-INF/templates/template.xhtml">
 	
 		<ui:define name="css">
-			<h:outputStylesheet library="css" name="mainStyle.css"></h:outputStylesheet>
+			<h:outputStylesheet library="css" name="mainStyle.css" />
 		</ui:define>
 	
 		<ui:define name="content">
@@ -20,19 +20,23 @@
 				<h:panelGrid columns="5">
 	
 					<h:outputLabel value="Username" for="username"/>
-					<h:inputText id="username" value="#{loginBeanCDI.user.username}" />
+					<h:inputText id="username" value="#{loginBean.user.username}" />
+					
+					<h:inputText id="dataAcesso" value="#{loginBean.dataAcesso">
+					   <f:convertDateTime patter="yyyy-M-d" />
+					</h:inputText>
 	
 					<h:outputLabel value="Password" for="pwd"/>
-					<h:inputSecret id="pwd" value="#{loginBeanCDI.user.password}"/>
+					<h:inputSecret id="pwd" value="#{loginBean.user.password}"/>
 					
-					<h:commandButton value="Login" id="combtn" action="#{loginBeanCDI.login()}"/>
+					<h:commandButton value="Login" id="combtn" action="#{loginBean.goToWelcome}"/>
 	
 				</h:panelGrid>
 			</h:form>
-			
-			<br/>
-			
-			<h:outputText value="Username: #{loginBeanCDI.user.username}" rendered="true"/>
+		
+            <br/>
+            
+            <h:outputText value="Username: #{loginBean.user.username}" rendered="#{loginBean.user.username ne null}" />
 		
 		</ui:define>
 	
