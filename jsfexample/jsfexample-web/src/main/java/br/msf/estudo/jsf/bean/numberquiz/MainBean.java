@@ -1,4 +1,4 @@
-package br.msf.estudo.jsf.bean;
+package br.msf.estudo.jsf.bean.numberquiz;
 
 import java.io.Serializable;
 

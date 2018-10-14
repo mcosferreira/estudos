@@ -1,5 +1,6 @@
-package br.msf.estudo.jsf.bean;
+package br.msf.estudo.jsf.bean.numberquiz;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,9 +9,10 @@ import javax.inject.Named;
 
 import br.msf.estudo.jsf.entity.ProblemBean;
 
-@Named
+@Named(value="quizBean")
 @SessionScoped
-public class QuizBean {
+public class QuizBean implements Serializable {
+	private static final long serialVersionUID = -4241791894684513500L;
 	private List<ProblemBean> problems = new ArrayList<ProblemBean>();
 	private int currentIndex;
 	private int score;
