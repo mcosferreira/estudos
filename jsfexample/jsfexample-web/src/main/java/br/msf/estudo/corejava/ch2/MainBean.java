@@ -1,4 +1,4 @@
-package br.msf.estudo.jsf.bean.numberquiz;
+package br.msf.estudo.corejava.ch2;
 
 import java.io.Serializable;
 

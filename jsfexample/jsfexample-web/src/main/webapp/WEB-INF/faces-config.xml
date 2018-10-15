@@ -1,68 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config version="2.2" 
-    xmlns="http://xmlns.jcp.org/ns/javaee"
+<faces-config version="2.2"
+	xmlns="http://xmlns.jcp.org/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xlmns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-	
-    <!-- Parametros da Aplicacao -->
+
+	<!-- Parametros da Aplicacao -->
 	<application>
 		<resource-bundle>
 			<base-name>resources</base-name>
 			<var>msg</var>
 		</resource-bundle>
+		<resource-bundle>
+			<base-name>br.msf.estudo.corejava.ch3.messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
 	</application>
-	
+
 	<navigation-rule>
-	   <from-view-id>/index.xhtml</from-view-id>
-	   
-	   <navigation-case>
-	       <from-action>#{loginBeanCDI.login()}</from-action>
-	       <from-outcome>success</from-outcome>
-	       <to-view-id>/pages/welcome</to-view-id>
-	       <redirect />
-	   </navigation-case>
-	   <navigation-case>
-	       <from-action>#{loginBeanCDI.login()}</from-action>
-	       <from-outcome>fail</from-outcome>
-	       <to-view-id>/pages/fail</to-view-id>
-	       <redirect />
-	   </navigation-case>
+		<from-view-id>/index.xhtml</from-view-id>
+
+		<navigation-case>
+			<from-action>#{loginBeanCDI.login()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/welcome</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{loginBeanCDI.login()}</from-action>
+			<from-outcome>fail</from-outcome>
+			<to-view-id>/pages/fail</to-view-id>
+			<redirect />
+		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
-	   <from-view-id>/pages/welcome.xhtml</from-view-id>
-	   
-	   <navigation-case>
-           <from-outcome>go</from-outcome>
-	       <if>#{classifBean.age le 11 and classifBean.age gt 0}</if>
-	       <to-view-id>/pages/age/kid</to-view-id>
-	       <redirect />
-	   </navigation-case>
-	   
-       <navigation-case>
-           <from-outcome>go</from-outcome>
-           <if>#{classifBean.age gt 11 and classifBean.age lt 40}</if>
-           <to-view-id>/pages/age/teen</to-view-id>
-           <redirect />
-       </navigation-case>
-       
-       <navigation-case>
-           <from-outcome>go</from-outcome>
-           <if>#{classifBean.age ge 40}</if>
-           <to-view-id>/pages/age/old</to-view-id>
-           <redirect />
-       </navigation-case>
-       
+		<from-view-id>/pages/welcome.xhtml</from-view-id>
+
+		<navigation-case>
+			<from-outcome>go</from-outcome>
+			<if>#{classifBean.age le 11 and classifBean.age gt 0}</if>
+			<to-view-id>/pages/age/kid</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>go</from-outcome>
+			<if>#{classifBean.age gt 11 and classifBean.age lt 40}</if>
+			<to-view-id>/pages/age/teen</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>go</from-outcome>
+			<if>#{classifBean.age ge 40}</if>
+			<to-view-id>/pages/age/old</to-view-id>
+			<redirect />
+		</navigation-case>
+
 	</navigation-rule>
-	
-	<!-- Factory to uses the Custom JsfException Handler -->	
-	<!-- 
-	<factory>
-	   <exception-handler-factory>
-	       br.msf.estudo.jsf.exception.JsfAppExceptionHandlerFactory
-	   </exception-handler-factory>
-	   
-	</factory>
-	-->
-	
+
+	<!-- Core JSF -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>startOver</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/again.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/failure.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/again.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Factory to uses the Custom JsfException Handler -->
+	<!-- <factory> <exception-handler-factory> br.msf.estudo.jsf.exception.JsfAppExceptionHandlerFactory 
+		</exception-handler-factory> </factory> -->
+
 </faces-config>
