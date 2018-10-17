@@ -6,18 +6,23 @@
 	 
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<title>Facelet Title</title>
+		<title>First App using Ajax</title>
 	</h:head>
 	<h:body>
-		<h:form>
+		<h:form prependId="false">
 			<h:panelGrid columns="3">
 				<h:outputLabel value="Username" for="username"/>
 				<h:inputText id="username" value="#{mainBean.username}" required="true" requiredMessage="#{msg['MsgCampoObrigatorio']}"/>
 				<h:message for="username"></h:message>
-				
+
+                <h:outputText id="outGreeting" value="#{mainBean.greeting}"/>
+                
 				<f:facet name="footer">
-					<h:commandButton value="Submit" action="/pages/home?faces-redirect=true"/> <!-- redireciona para a pagina chamada, atualiza a url -->
+					<h:commandButton value="Submit">
+					   <f:ajax execute="username" render="outGreeting"/>
+					</h:commandButton>
 				</f:facet>
+				
 			</h:panelGrid>
 		</h:form>
 	</h:body>
