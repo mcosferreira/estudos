@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>#{msg.title}</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h3>#{msg.heading}</h3>
+            <p>
+                <h:outputFormat value="#{msg.currentScore}">
+                    <f:param value="#{quizBean.score}" />
+                </h:outputFormat>
+            </p>
+            <p>#{msg.guessNext}</p>
+            <p>#{quizBean.current.sequence}</p>
+            <p>
+                #{msg.answer}
+                <h:inputText value="#{quizBean.answer}" />
+            </p>
+            <p>
+                <h:commandButton value="#{msg.next}" />
+            </p>
+        </h:form>            
+    </h:body>
+</html>    
