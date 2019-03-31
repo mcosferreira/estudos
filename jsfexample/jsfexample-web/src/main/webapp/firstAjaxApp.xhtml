@@ -16,8 +16,7 @@
 				<h:message for="username"></h:message>
 
                 <h:outputText id="outGreeting" value="#{mainBean.greeting}"/>
-                
-				<f:facet name="footer">
+                <f:facet name="footer">
 					<h:commandButton value="Submit">
 					   <f:ajax execute="username" render="outGreeting"/>
 					</h:commandButton>

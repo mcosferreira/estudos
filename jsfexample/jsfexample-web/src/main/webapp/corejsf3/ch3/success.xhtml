@@ -12,15 +12,15 @@
          <p>
             #{msgs.correct}
             <h:outputFormat value="#{msgs.score}">
-               <f:param value="#{quizBean.score}"/>
+               <f:param value="#{quizBeanCh3.score}"/>
             </h:outputFormat>
          </p>
          <p>#{msgs.nextProblem}</p>
-         <p>#{quizBean.question}</p>
-         <p><h:inputText value="#{quizBean.response}"/></p>
+         <p>#{quizBeanCh3.question}</p>
+         <p><h:inputText value="#{quizBeanCh3.response}"/></p>
          <p>
             <h:commandButton value="#{msgs.checkAnswer}"
-                             action="#{quizBean.answerAction}"/>
+                             action="#{quizBeanCh3.answerAction}"/>
          </p>
       </h:form>
    </h:body>
